@@ -17,7 +17,7 @@ Tiny Lisp> (* 2 (+ 1 1))
 
 fibonacci sequence
 ```
-Tiny Lisp> (define fib (lambda n (if (= n 1) 1 (if (= n 2) 1 (+ (fib(- n 1)) (fib (- n 2)}))))))
+Tiny Lisp> (define fib (lambda n (if (= n 1) 1 (if (= n 2) 1 (+ (fib(- n 1)) (fib (- n 2)))))))
 
 Tiny Lisp> fib
 <procedure.Procedure object at 0x7fbbffb6a748>
