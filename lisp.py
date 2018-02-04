@@ -37,7 +37,7 @@ def meval(expr, env):
     if is_primitive(expr):
         return eval_primitive(expr)
     elif is_if(expr):
-        return eval_if(expr)
+        return eval_if(expr, env)
     elif is_definition(expr):
         return eval_definition(expr, env)
     elif is_name(expr):
@@ -188,9 +188,11 @@ def run():
         input_code = input("Tiny Lisp> ")
         if input_code == "quit": break
         for each_expr in parser(input_code):
-            print (str(meval(each_expr, env)))
+            if meval(each_expr, env) != None:
+                print (str(meval(each_expr, env)))
 
 
 ###############################################################################
 if __name__ == '__main__':
     run()
+
